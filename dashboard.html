@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    color:#1e3a8a;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.card{
+    transition:0.3s;
+    width:250px;
+    padding:20px;
+    background:white;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+.card:hover{
+    transform:scale(1.05);
+}
+
+.number{
+    font-size:40px;
+    font-weight:bold;
+    color:#2563eb;
+}
+</style>
+
+</head>
+<body>
+    <div style="
+background:#111827;
+padding:15px;
+border-radius:10px;
+text-align:center;
+margin-bottom:20px;">
+
+<a href="/dashboard" style="
+color:white;
+margin:15px;
+text-decoration:none;">
+Dashboard
+</a>
+
+<a href="/predictpage" style="
+color:white;
+margin:15px;
+text-decoration:none;">
+Prediction
+</a>
+
+<a href="/history" style="
+color:white;
+margin:15px;
+text-decoration:none;">
+History
+</a>
+
+<a href="/about" style="
+color:white;
+margin:15px;
+text-decoration:none;">
+About
+</a>
+
+</div>
+
+<h1>AI Defect Prediction Dashboard</h1>
+<p style="text-align:center;color:white;font-size:18px;">
+AI-Based Software Defect Prediction & Analytics Platform
+</p>
+
+<div class="cards">
+
+    <div class="card">
+        <h3>Total Predictions</h3>
+        <div class="number">{{ total_predictions }}</div>
+    </div>
+
+    <div class="card">
+        <h3>High Risk</h3>
+        <div class="number">{{ high_risk }}</div>
+    </div>
+
+    <div class="card">
+        <h3>Low Risk</h3>
+        <div class="number">{{ low_risk }}</div>
+    </div>
+    <div class="card">
+    <h3>Model Accuracy</h3>
+    <div class="number">92%</div>
+</div>
+    <div class="card" style="margin:30px auto; width:400px;">
+    <h3>Risk Analytics</h3>
+
+    <p>🔴 High Risk: {{ high_percent }}%</p>
+
+    <div style="
+    background:#ddd;
+    height:20px;
+    border-radius:10px;">
+        <div style="
+        width:{{ high_percent }}%;
+        background:red;
+        height:20px;
+        border-radius:10px;">
+        </div>
+    </div>
+
+    <br>
+
+    <p>🟢 Low Risk: {{ low_percent }}%</p>
+
+    <div style="
+    background:#ddd;
+    height:20px;
+    border-radius:10px;">
+        <div style="
+        width:{{ low_percent }}%;
+        background:green;
+        height:20px;
+        border-radius:10px;">
+        </div>
+    </div>
+
+</div>
+
+</div>
+<div style="text-align:center; margin-top:30px;">
+
+    <a href="/predictpage" style="
+    background:#2563eb;
+    color:white;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:8px;">
+    New Prediction
+    </a>
+
+    <a href="/history" style="
+    background:#16a34a;
+    color:white;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:8px;
+    margin-left:10px;">
+    View History
+</a>
+<a href="/export" style="
+background:#dc2626;
+color:white;
+padding:10px 20px;
+text-decoration:none;
+border-radius:8px;
+margin-left:10px;">
+Export CSV
+</a><a href="/about" style="
+background:#7c3aed;
+color:white;
+padding:10px 20px;
+text-decoration:none;
+border-radius:8px;
+margin-left:10px;">
+About Project
+</a>
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Defect Prediction System</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg,#0f172a,#1e3a8a);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin:0;
+        }
+
+        .container{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            width:400px;
+            box-shadow:0 0 20px rgba(0,0,0,0.3);
+        }
+
+        h1{
+            text-align:center;
+            color:#1e3a8a;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+            border-radius:8px;
+            border:1px solid #ccc;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>AI-Based Software Defect Prediction</h1>
+
+    <form action="/predict" method="POST">
+
+        <label>Project Size</label>
+        <input type="number" name="size" required>
+
+        <label>Complexity</label>
+        <input type="number" name="complexity" required>
+
+        <label>Team Experience</label>
+        <input type="number" name="experience" required>
+
+        <button type="submit">Predict Risk</button>
+
+    </form>
+</div>
+
+</body>
+</html>
+

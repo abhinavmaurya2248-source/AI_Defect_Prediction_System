@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prediction Result</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+
+.card{
+    background:white;
+    width:500px;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(0,0,0,0.3);
+}
+
+h1{
+    color:#1e3a8a;
+}
+
+.high{
+    color:red;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.low{
+    color:green;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.score{
+    font-size:24px;
+    margin:20px;
+}
+
+.rec{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:10px;
+    text-align:left;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Prediction Result</h1>
+
+{% if prediction == "High Defect Risk" %}
+<div class="high">{{ prediction }}</div>
+{% else %}
+<div class="low">{{ prediction }}</div>
+{% endif %}
+
+<div class="score">
+Risk Score: <b>{{ risk_score }}%</b>
+</div>
+
+<div class="rec">
+<h3>Recommendations</h3>
+<pre>{{ recommendation }}</pre>
+</div>
+
+<a href="/" class="btn">
+Predict Again
+</a>
+
+</div>
+
+</body>
+</html>
